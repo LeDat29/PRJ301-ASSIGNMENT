@@ -16,7 +16,7 @@
                 </div>
                 <div id="parentTab" class="tabcontent">
                     <!-- Phần đăng nhập cho phụ huynh -->
-                    <form action="process_parent_login.php" method="POST">
+                    <form action="login" method="POST">
                         <label for="parent_username">Tên Người Dùng:</label>
                         <input type="text" id="parent_username" name="parent_username" required><br>
                         <label for="parent_password">Mật Khẩu:</label>
