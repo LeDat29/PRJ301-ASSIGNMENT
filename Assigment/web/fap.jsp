@@ -1,7 +1,6 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,8 +22,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
         <!-- file khac  -->
-        <link rel="stylesheet" href="style.css">
-        <script src="/js.js"></script>
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/js.js"></script>
         <title>FAP</title>
     </head>
 
@@ -32,15 +31,15 @@
         <div class="d-flex">
             <div class="p-2 flex-grow-1">
                 <h3>FPT University Academic Portal</h3>
-                <img height="100px" width="250px" src="/download.png">
+                <img height="100px" width="250px" src="./image/download.png">
             </div>
 
             <div class="p-2">
                 <div>
                     <h4> FAP mobile app (myFAP) is ready at
                     </h4>
-                    <img height="50px" width="100px" src="/download  app(2).png">
-                    <img height="50px" width="100px" src="download CH.png">
+                    <img height="50px" width="100px" src="./image/download  app(2).png">
+                    <img height="50px" width="100px" src="./image/download CH.png">
                 </div>
             </div>
         </div>
@@ -54,9 +53,12 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ml-auto">
 
-                        <a class="nav-link" href="#">Đăng nhập</a>
-
-                        <a class="nav-link" href="#">Đăng kí</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+                            Đăng Nhập
+                        </button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signinModal">
+                            Đăng Kí
+                        </button>
 
                     </div>
                 </div>
@@ -69,17 +71,17 @@
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
                 <div class="numbertext">1 / 3</div>
-                <img src="/20220322150840-b478_wm.jpg">
+                <img src="./image/20220322150840-b478_wm.jpg">
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">2 / 3</div>
-                <img src="/20220613144218-8a02_wm.jpg">
+                <img src="./image/20220613144218-8a02_wm.jpg">
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">3 / 3</div>
-                <img src="/HUY_9423.jpg">
+                <img src="./image/HUY_9423.jpg">
             </div>
 
             <!-- Next and previous buttons -->
@@ -103,6 +105,76 @@
             <a href="https://flm.fpt.edu.vn/DefaultSignin"> FLM </a>
         </div>
 
+        <!-- khung login -->
+        <div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="true" data-keyboard="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Đăng Nhập</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+<!--                        login-->
+                        <form>
+                            <div class="form-group">
+                                <label for="username">Tên Người Dùng:</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Mật Khẩu:</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- khung signin -->
+        <div class="modal" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="true" data-keyboard="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Đăng Kí</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+<!--                        login-->
+                        <form>
+                            <div class="form-group">
+                                <label for="username">Tên Người Dùng:</label>
+                                <input type="text" class="form-control" id="usernameS" name="usernameS" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Mật Khẩu:</label>
+                                <input type="password" class="form-control" id="password" name="passwordS" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Xác nhận mật Khẩu:</label>
+                                <input type="password" class="form-control" id="passwordS" name="passwordS" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="role">Vai Trò:</label>
+                                <select class="form-control" id="role" name="role">
+                                    <option value="teacher">Giáo Viên</option>
+                                    <option value="student">Học Sinh</option>
+                                    <option value="parent">Phụ Huynh</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<!--        js slide-->
         <script>
             let slideIndex = 0;
             showSlides();
@@ -123,10 +195,10 @@
                 }
                 slides[slideIndex - 1].style.display = "block";
                 dots[slideIndex - 1].className += " active";
-                setTimeout(showSlides, 2000); // Change image every 2 seconds
+                setTimeout(showSlides, 2000);
             }
         </script>
 
-
     </body>
 </html>
+
