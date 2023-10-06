@@ -22,9 +22,156 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
         <!-- file khac  -->
-        <link rel="stylesheet" href="./css/style.css">
-        <script src="./js/js.js"></script>
         <title>FAP</title>
+
+        <style>
+
+
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+
+            .mySlides {
+                display: none;
+            }
+
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                margin-top: -22px;
+                padding: 16px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+            }
+
+            .text {
+                color: #f2f2f2;
+                font-size: 15px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .numbertext {
+                color: #f2f2f2;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+
+            .active, .dot:hover {
+                background-color: #717171;
+            }
+
+            .fade {
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+
+            @keyframes fade {
+                from {
+                    opacity: .4
+                }
+                to {
+                    opacity: 1
+                }
+            }
+
+            .mySlides img {
+                height: 500px;
+                width: 100%;
+            }
+
+            .p-2 img {
+                margin: 0px 0px 10px 80px;
+            }
+
+            #navbarNavAltMarkup .navbar-nav {
+                display: flex;
+                flex-direction: row-reverse;
+                background-color: orange;
+            }
+
+            .last_page {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+
+            .modal-content {
+                background-color: #fff;
+                margin: 10% auto;
+                padding: 20px;
+                width: 70%;
+            }/*
+
+            */
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            #tabs {
+                overflow: hidden;
+            }
+
+            .tablinks {
+                background-color: #f2f2f2;
+                float: left;
+                cursor: pointer;
+                padding: 10px 20px;
+                border: none;
+                outline: none;
+            }
+
+            .tablinks:hover {
+                background-color: #ddd;
+            }
+
+            .tabcontent {
+                display: none;
+            }
+        </style>
     </head>
 
     <body>
@@ -59,7 +206,6 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signinModal">
                             Đăng Kí
                         </button>
-
                     </div>
                 </div>
             </div>
@@ -116,8 +262,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-<!--                        login-->
-                        <form>
+                        <!--                        login-->
+                        <form action="login" method="post">
                             <div class="form-group">
                                 <label for="username">Tên Người Dùng:</label>
                                 <input type="text" class="form-control" id="username" name="username" required>
@@ -144,8 +290,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-<!--                        login-->
-                        <form>
+                        <!--                        login-->
+                        <form action="signin" method="post">
                             <div class="form-group">
                                 <label for="username">Tên Người Dùng:</label>
                                 <input type="text" class="form-control" id="usernameS" name="usernameS" required>
@@ -174,7 +320,7 @@
         </div>
 
 
-<!--        js slide-->
+        <!--        js slide-->
         <script>
             let slideIndex = 0;
             showSlides();
